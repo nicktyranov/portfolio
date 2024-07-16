@@ -1,6 +1,6 @@
-import styles from './Label.module.css';
 import ILabelProps from './Label.props';
 import cn from 'classnames';
+import styles from './Label.module.css';
 
 function Label({ text, forFilter, className, ...props }: ILabelProps) {
    return (
@@ -12,6 +12,7 @@ function Label({ text, forFilter, className, ...props }: ILabelProps) {
             },
             className
          )}
+         {...props}
       >
          {text}
       </div>

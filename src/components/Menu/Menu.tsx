@@ -1,5 +1,5 @@
-import styles from './Menu.module.css';
 import logo from './logo.svg';
+import styles from './Menu.module.css';
 
 function Menu() {
    return (

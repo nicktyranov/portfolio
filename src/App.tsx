@@ -1,4 +1,6 @@
 import styles from './app.module.css';
+import Contacts from './components/Contacts/Contacts';
+import Filter from './components/Filter/Filter';
 import Footer from './components/Footer/Footer';
 import LogoWithLabels from './components/LogoWithLabels/LogoWithLabels';
 import Menu from './components/Menu/Menu';
@@ -27,6 +29,10 @@ function App() {
                </div>
             </div>
          </div>
+         <h2 className={styles.heading}>portfolio</h2>
+         <Filter />
+         <h2 className={styles.heading}>contacts</h2>
+         <Contacts />
          <Footer />
       </>
    );

@@ -1,4 +1,5 @@
-export default interface ILabelProps {
+export default interface ILabelProps
+   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
    text: string;
    forFilter?: boolean;
    className?: string;

@@ -1,7 +1,7 @@
-import styles from './Button.module.css';
 import IButtonProps from './Button.props';
 import cn from 'classnames';
 import iconArrow from '/arrow-right-top.svg';
+import styles from './Button.module.css';
 
 function Button({ children, icon, form, className, ...props }: IButtonProps) {
    return (

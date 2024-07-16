@@ -1,6 +1,6 @@
-import styles from './Footer.module.css';
 import iconMail from '/email-icon.svg';
 import iconLinkedin from '/linkedin-icon.svg';
+import styles from './Footer.module.css';
 
 function Footer() {
    return (
