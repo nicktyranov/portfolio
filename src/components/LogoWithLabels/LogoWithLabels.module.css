@@ -1,0 +1,95 @@
+.wrapper {
+   position: relative;
+
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 1144px;
+   margin: 0 auto;
+   padding: 160px 0;
+}
+
+.container {
+   position: relative;
+}
+
+.text {
+   position: relative;
+
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
+   align-items: center;
+
+   font-family: Humane;
+   font-size: 297px;
+   font-weight: 700;
+   font-style: normal;
+   line-height: 71%;
+   color: var(--color-white);
+   text-transform: uppercase;
+}
+
+.text span {
+   display: inline-block;
+
+   font-size: 168px;
+   font-weight: 600;
+   font-style: normal;
+   line-height: 74%;
+   color: var(--color-red);
+   text-transform: uppercase;
+}
+
+.label1 {
+   position: absolute;
+   top: 30px;
+   left: -38px;
+}
+
+.label2 {
+   position: absolute;
+   top: 0;
+   left: 178px;
+}
+
+.label3 {
+   position: absolute;
+   top: 120px;
+   left: 140px;
+}
+
+.label4 {
+   position: absolute;
+   top: 45px;
+   left: 515px;
+}
+
+.label5 {
+   position: absolute;
+   top: 110px;
+   left: 745px;
+}
+
+.label6 {
+   position: absolute;
+   top: 0;
+   right: 50px;
+}
+
+.label7 {
+   position: absolute;
+   top: 140px;
+   right: -40px;
+}
+
+.label8 {
+   position: absolute;
+   bottom: 25px;
+   left: 235px;
+}
+
+.label9 {
+   position: absolute;
+   right: 265px;
+   bottom: 85px;
+}
