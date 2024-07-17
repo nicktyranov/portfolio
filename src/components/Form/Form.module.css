@@ -1,0 +1,47 @@
+.wrapper {
+   display: flex;
+   justify-content: space-between;
+
+   margin-top: 60px;
+   margin-bottom: 130px;
+   padding: 0 30px;
+}
+
+.call-to-action {
+   font-size: var(--font-30);
+   font-weight: 500;
+   font-style: normal;
+   color: var(--color-white);
+   text-transform: capitalize;
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   align-content: flex-start;
+
+   max-width: 540px;
+}
+
+.form input,
+textarea {
+   width: 100%;
+   padding: 25px 15px;
+
+   font-family: Urbanist, sans-serif;
+   font-size: var(--font-16);
+   font-weight: 500;
+   font-style: normal;
+   color: var(--color-grey-light);
+
+   background-color: var(--color-extra-black);
+   border: none;
+}
+
+.error {
+   padding: 5px;
+   font-size: var(--font-14);
+   color: var(--color-white);
+   background-color: var(--color-red-50);
+}

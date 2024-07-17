@@ -1,6 +1,7 @@
-export default interface IButtonProps {
-   children: string;
+export default interface IButtonProps
+   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+   children: React.ReactNode;
    className?: string;
-   form?: boolean;
+   isForm?: boolean;
    icon?: boolean;
 }

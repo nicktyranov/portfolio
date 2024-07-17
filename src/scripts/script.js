@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 (function () {
    // var canvas = document.createElement('canvas'),
-   var canvas = document.getElementById('backgroundCanvas'),
+   var canvas = document.getElementById('background-canvas'),
       ctx = canvas.getContext('2d'),
       w = (canvas.width = innerWidth),
       h = (canvas.height = innerHeight),

@@ -69,9 +69,9 @@ body {
    background-color: var(--color-black);
 }
 
-canvas#backgroundCanvas {
+canvas#background-canvas {
    position: fixed;
-   z-index: -1; /* Canvas будет за содержимым */
+   z-index: -1;
    top: 0;
    left: 0;
 
