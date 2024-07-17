@@ -3,6 +3,7 @@ import Contacts from './components/Contacts/Contacts';
 import Filter from './components/Filter/Filter';
 import Footer from './components/Footer/Footer';
 import LogoWithLabels from './components/LogoWithLabels/LogoWithLabels';
+import Marquee from './components/Marquee/Marquee';
 import Menu from './components/Menu/Menu';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
          <Filter />
          <h2 className={styles.heading}>contacts</h2>
          <Contacts />
+         <Marquee />
          <Footer />
       </>
    );

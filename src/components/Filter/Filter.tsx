@@ -100,6 +100,10 @@ function Filter({ ...props }) {
          );
          setFilteredData(filtered);
       }
+      if (clickedLabels.includes(0)) {
+         setFilteredData(data);
+         setClickedLabels([]);
+      }
    }, [clickedLabels]);
 
    return (
