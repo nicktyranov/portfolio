@@ -1,45 +1,9 @@
 import { useEffect, useState } from 'react';
 import Label from '../Label/Label';
 import cn from 'classnames';
-import cardImg1 from './card1.png';
-import cardImg2 from './card2.png';
-import cardImg3 from './card3.png';
-import cardImg4 from './card4.png';
 import styles from './Filter.module.css';
-
-export type Data = {
-   id: number;
-   name: string;
-   categoryId: number[];
-   img: string;
-};
-
-const data: Data[] = [
-   {
-      id: 1,
-      name: 'Project name 1',
-      categoryId: [0, 1],
-      img: cardImg1
-   },
-   {
-      id: 2,
-      name: 'Project name 2',
-      categoryId: [0, 2],
-      img: cardImg2
-   },
-   {
-      id: 3,
-      name: 'Project name 3',
-      categoryId: [0, 1, 2],
-      img: cardImg3
-   },
-   {
-      id: 4,
-      name: 'Project name 4',
-      categoryId: [0, 5],
-      img: cardImg4
-   }
-];
+import { Link } from 'react-router-dom';
+import { Data, data } from './filterData';
 
 export type CategoryId = {
    id: number;
@@ -127,16 +91,18 @@ function Filter({ ...props }) {
             {filteredData.map((item) => {
                return (
                   <div className={styles['card']} key={item.id}>
-                     <img
-                        src={item.img}
-                        alt={item.name}
-                        className={styles['card-image']}
-                     />
-                     <Label
-                        text={item.name}
-                        forFilter={true}
-                        className={styles['card-label']}
-                     />
+                     <Link to={`/projects/${item.id}`}>
+                        <img
+                           src={item.img}
+                           alt={item.name}
+                           className={styles['card-image']}
+                        />
+                        <Label
+                           text={item.name}
+                           forFilter={true}
+                           className={styles['card-label']}
+                        />
+                     </Link>
                   </div>
                );
             })}
