@@ -15,7 +15,8 @@ function Button({ children, icon, isForm, className, ...props }: IButtonProps) {
          )}
          {...props}
       >
-         {children} {icon && <img src={iconArrow} alt="icon Arrow" />}
+         <div className={styles['button-text']}>{children}</div>
+         {icon && <img src={iconArrow} alt="icon Arrow" />}
       </button>
    );
 }

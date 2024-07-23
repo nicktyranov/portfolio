@@ -3,8 +3,11 @@ import styles from './Form.module.css';
 import Button from '../Button/Button';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import cn from 'classnames';
 
 export default function Form({
+   className,
+   productPage,
    callToAction = `Ready to bring your project to life? \n Let's talk!`
 }: IFormProps) {
    const [errorName, setErrorName] = useState('');
@@ -41,7 +44,7 @@ export default function Form({
 
    function checkEmail(email: string) {
       const regex =
-         /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
+         /^((([0-9A-Za-z]{1}[-0-9A-z]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
       return regex.test(email);
    }
 
@@ -69,7 +72,7 @@ export default function Form({
    };
 
    return (
-      <div className={styles.wrapper}>
+      <div className={cn(styles.wrapper, className)}>
          <div className={styles['call-to-action']}>
             {callToAction.split('\n').map((line, index) => (
                <React.Fragment key={index}>
@@ -78,7 +81,12 @@ export default function Form({
                </React.Fragment>
             ))}
          </div>
-         <form className={styles.form} onSubmit={handleFormSubmit}>
+         <form
+            className={cn(styles.form, {
+               [styles['form-page']]: productPage
+            })}
+            onSubmit={handleFormSubmit}
+         >
             <label htmlFor="name">
                {errorName && <div className={styles.error}>{errorName}</div>}
                <input

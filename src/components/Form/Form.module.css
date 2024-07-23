@@ -24,6 +24,10 @@
    max-width: 540px;
 }
 
+.form-page {
+   max-width: 600px;
+}
+
 .form input,
 textarea {
    width: 100%;
