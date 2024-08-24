@@ -51,7 +51,25 @@
 }
 
 .poster {
+   position: relative;
    margin-top: 30px;
+}
+
+.poster::before {
+   content: '';
+
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   width: 100%;
+   height: 100%;
+
+   background-color: var(--color-black-transparent2);
+}
+
+.poster:hover::before {
+   background-color: transparent;
 }
 
 .poster img {
@@ -60,6 +78,7 @@
    max-height: 510px;
 
    object-fit: cover;
+   object-position: top;
    border-radius: 30px;
 }
 

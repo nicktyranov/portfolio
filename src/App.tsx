@@ -6,10 +6,24 @@ import Form from './components/Form/Form';
 import LogoWithLabels from './components/LogoWithLabels/LogoWithLabels';
 import MarqueeComponent from './components/Marquee/Marquee';
 import Menu from './components/Menu/Menu';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectInfo from './projects/projectInfo';
+import { useEffect } from 'react';
 
 function App() {
+   const location = useLocation();
+
+   useEffect(() => {
+      if (location.hash) {
+         const element = document.getElementById(location.hash.substring(1));
+
+         if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+         } else {
+            window.scrollTo(0, 0);
+         }
+      }
+   }, [location]);
    return (
       <>
          <Menu />
@@ -31,17 +45,21 @@ function App() {
                            <div className={styles['stack-left']}>
                               <p>
                                  Front-end: TypeScript, JavaScript, React,
-                                 Next.js, Redux, HTML5, CSS
+                                 Next.js, Redux, HTML5, CSS3
                               </p>
                            </div>
                            <div className={styles['stack-right']}>
-                              <p>OTHER: Git</p>
+                              <p>OTHER: Git, Rest API, SVG</p>
                            </div>
                         </div>
                      </div>
-                     <h2 className={styles.heading}>portfolio</h2>
+                     <h2 id="portfolio" className={styles.heading}>
+                        portfolio
+                     </h2>
                      <Filter />
-                     <h2 className={styles.heading}>contacts</h2>
+                     <h2 id="contacts" className={styles.heading}>
+                        contacts
+                     </h2>
                      <Contacts />
                      <MarqueeComponent />
                      <Form />

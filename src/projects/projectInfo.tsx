@@ -1,14 +1,19 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { data } from '../components/Filter/filterData';
 import img from './projects-icon.svg';
 import Button from '../components/Button/Button';
 import icon from './icon-circle.svg';
-import styles from './projectInfo.module.css';
 import Form from '../components/Form/Form';
+import { useEffect } from 'react';
+import styles from './projectInfo.module.css';
 
 export default function ProjectInfo() {
    const { id } = useParams();
    const product = data.find((el) => el.id == id);
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
 
    if (!product) {
       return <div>Product not found</div>;
@@ -28,13 +33,18 @@ export default function ProjectInfo() {
                   {product.shortDescription}
                </p>
                <div className={styles['header-buttons']}>
-                  <Button>VIEW PROJECT</Button>
-                  <Button>VIEW ON GITHUB</Button>
+                  <Link to={product.links[0]}>
+                     <Button>VIEW PROJECT</Button>
+                  </Link>
+
+                  <Link to={product.links[1]}>
+                     <Button>VIEW ON GITHUB</Button>
+                  </Link>
                </div>
             </div>
          </div>
          <div className={styles.poster}>
-            <img src={product.img} alt={product.name + 'image'} />
+            <img src={product.poster} alt={product.name + 'image'} />
          </div>
 
          <div className={styles['description-wrapper']}>
@@ -60,8 +70,8 @@ export default function ProjectInfo() {
                </div>
                <div className={styles['description-text']}>
                   <ul>
-                     {product.features.map((el) => {
-                        return <li>{el}</li>;
+                     {product.features.map((el, index) => {
+                        return <li key={index}>{el}</li>;
                      })}
                   </ul>
                </div>
@@ -78,8 +88,8 @@ export default function ProjectInfo() {
                </div>
                <div className={styles['description-text']}>
                   <ul>
-                     {product.technologies.map((el) => {
-                        return <li>{el}</li>;
+                     {product.technologies.map((el, index) => {
+                        return <li key={index}>{el}</li>;
                      })}
                   </ul>
                </div>

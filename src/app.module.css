@@ -24,7 +24,8 @@
 }
 
 .stack-wrapper {
-   display: flex;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
    gap: 20px;
 
    font-size: var(--font-20);
@@ -36,7 +37,6 @@
 
 .stack-wrapper div {
    width: 100%;
-   max-width: 600px;
    padding: 47px 130px;
 }
 
