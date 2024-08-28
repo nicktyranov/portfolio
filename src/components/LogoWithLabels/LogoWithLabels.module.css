@@ -26,13 +26,15 @@
    font-style: normal;
    line-height: 71%;
    color: var(--color-white);
+   text-align: center;
    text-transform: uppercase;
+   text-wrap: nowrap;
 }
 
 .text span {
    display: inline-block;
 
-   font-size: 168px;
+   font-size: var(--font-168);
    font-weight: 600;
    font-style: normal;
    line-height: 74%;
@@ -92,4 +94,72 @@
    position: absolute;
    right: 265px;
    bottom: 85px;
+}
+
+.labels-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   align-items: center;
+   justify-content: center;
+
+   margin-top: 20px;
+
+   text-wrap: nowrap;
+}
+
+@media (width <= 1200px) {
+   .label {
+      position: static;
+   }
+
+   .text {
+      font-size: var(--font-276);
+      font-weight: 700;
+      font-style: normal;
+      line-height: 71%;
+   }
+}
+
+@media (width <= 1100px) {
+   .text {
+      font-size: var(--font-200);
+   }
+
+   .text span {
+      font-size: var(--font-168);
+   }
+}
+
+@media (width <= 768px) {
+   .text {
+      font-size: var(--font-100);
+   }
+
+   .text span {
+      font-size: var(--font-80);
+   }
+
+   .label {
+      font-size: var(--font-12);
+   }
+}
+
+@media (width <= 400px) {
+   .wrapper {
+      margin: 200px 0;
+      padding: 0;
+   }
+
+   .text {
+      font-size: var(--font-88);
+   }
+
+   .text span {
+      font-size: var(--font-60);
+   }
+
+   .label {
+      font-size: var(--font-12);
+   }
 }

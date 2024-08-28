@@ -1,10 +1,10 @@
 .wrapper {
    display: flex;
+   gap: 30px;
    justify-content: space-between;
 
    margin-top: 60px;
    margin-bottom: 130px;
-   padding: 0 30px;
 }
 
 .call-to-action {
@@ -21,6 +21,7 @@
    gap: 15px;
    align-content: flex-start;
 
+   width: 100%;
    max-width: 540px;
 }
 
@@ -56,4 +57,27 @@ textarea {
 
 .success {
    background-color: rgb(40 167 69);
+}
+
+@media (width <= 600px) {
+   .wrapper {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 60px;
+      margin-bottom: 70px;
+      padding: 0 30px;
+   }
+
+   .form {
+      margin-top: 15px;
+   }
+
+   .call-to-action {
+      font-size: var(--font-23);
+      font-weight: 500;
+      font-style: normal;
+      line-height: 116%;
+      text-align: center;
+   }
 }

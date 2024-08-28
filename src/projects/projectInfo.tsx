@@ -22,25 +22,24 @@ export default function ProjectInfo() {
    return (
       <div className={styles.wrapper}>
          <div className={styles.header}>
-            <img src={img} alt="projects icon" />
-            <div className={styles['header-text']}>
-               <h1 className={styles.heading}>
-                  {product.name.split(' ').map((el, index) => {
-                     return <span key={index}>{`${el} `}</span>;
-                  })}
-               </h1>
-               <p className={styles['header-description']}>
-                  {product.shortDescription}
-               </p>
-               <div className={styles['header-buttons']}>
-                  <Link to={product.links[0]}>
-                     <Button>VIEW PROJECT</Button>
-                  </Link>
+            <img src={img} alt="projects icon" className={styles.image} />
 
-                  <Link to={product.links[1]}>
-                     <Button>VIEW ON GITHUB</Button>
-                  </Link>
-               </div>
+            <h1 className={styles.heading}>
+               {product.name.split(' ').map((el, index) => {
+                  return <span key={index}>{`${el} `}</span>;
+               })}
+            </h1>
+            <p className={styles['header-description']}>
+               {product.shortDescription}
+            </p>
+            <div className={styles['header-buttons']}>
+               <Link to={product.links[0]}>
+                  <Button>VIEW PROJECT</Button>
+               </Link>
+
+               <Link to={product.links[1]}>
+                  <Button>VIEW ON GITHUB</Button>
+               </Link>
             </div>
          </div>
          <div className={styles.poster}>
@@ -50,7 +49,7 @@ export default function ProjectInfo() {
          <div className={styles['description-wrapper']}>
             <div className={styles['description-element']}>
                <div className={styles['description-heading']}>
-                  <div>
+                  <div className={styles['bullets']}>
                      <img src={icon} alt="icon circle" />
                   </div>
                   <p>description</p>
@@ -62,7 +61,7 @@ export default function ProjectInfo() {
 
             <div className={styles['description-element']}>
                <div className={styles['description-heading']}>
-                  <div>
+                  <div className={styles['bullets']}>
                      <img src={icon} alt="icon circle" />
                      <img src={icon} alt="icon circle" />
                   </div>
@@ -79,7 +78,7 @@ export default function ProjectInfo() {
 
             <div className={styles['description-element']}>
                <div className={styles['description-heading']}>
-                  <div>
+                  <div className={styles['bullets']}>
                      <img src={icon} alt="icon circle" />
                      <img src={icon} alt="icon circle" />
                      <img src={icon} alt="icon circle" />

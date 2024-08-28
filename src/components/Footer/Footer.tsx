@@ -6,8 +6,12 @@ function Footer() {
    return (
       <div className={styles.wrapper}>
          <div className={styles.icons}>
-            <img src={iconMail} alt="iconMail" />
-            <img src={iconLinkedin} alt="icon Linkedin" />
+            <a href="mailto: nicktyranov@gmail.com">
+               <img src={iconMail} alt="iconMail" />
+            </a>
+            <a href="https://www.linkedin.com/in/ntyranov/">
+               <img src={iconLinkedin} alt="icon Linkedin" />
+            </a>
          </div>
          <div className={styles.text}>
             &#169;{new Date().getFullYear()} all rights reserved

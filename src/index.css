@@ -31,6 +31,7 @@
    --font-168: 168px;
    --font-200: 200px;
    --font-240: 240px;
+   --font-276: 276px;
    --font-289: 289px;
    --font-297: 297px;
    --font-335: 335px;
@@ -61,12 +62,16 @@
    padding: 0;
 }
 
+a {
+   text-decoration: none;
+}
+
 body {
    max-width: 1280px;
    margin: 0 auto;
 
    /* padding: 30px 40px; */
-   padding: 30px 0;
+   padding: 10px;
 
    font-family: Urbanist, sans-serif;
 

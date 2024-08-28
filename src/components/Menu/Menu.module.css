@@ -1,10 +1,16 @@
 .wrapper {
    display: flex;
+   flex-direction: column;
+}
+
+.menu {
+   display: flex;
    align-items: center;
    justify-content: space-between;
 }
 
-.logo {
+.logo,
+.logo a {
    display: flex;
    align-items: center;
 }
@@ -21,4 +27,39 @@
    color: var(--color-white);
    text-decoration: none;
    text-transform: uppercase;
+}
+
+.mobile-icon {
+   display: none;
+}
+
+.mobile-menu {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   align-items: center;
+   justify-content: center;
+
+   height: 100vh;
+   max-height: 100%;
+}
+
+.mobile-menu a {
+   font-family: Urbanist, sans-serif;
+   font-size: var(--font-20);
+   font-weight: 500;
+   font-style: normal;
+   line-height: 122%;
+   color: var(--color-white);
+   text-transform: uppercase;
+}
+
+@media (width <= 768px) {
+   .navigation {
+      display: none;
+   }
+
+   .mobile-icon {
+      display: block;
+   }
 }

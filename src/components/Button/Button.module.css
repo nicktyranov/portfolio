@@ -1,9 +1,12 @@
 .button {
    cursor: pointer;
 
+   display: flex;
+   justify-content: center;
+
    width: 100%;
    max-width: 445px;
-   padding: 20px 166px;
+   padding: 20px 0;
 
    font-size: var(--font-16);
    font-weight: 400;
@@ -32,7 +35,6 @@
    width: 100%;
    max-width: 600px;
    max-height: 50px;
-   padding: 20px 265px;
 
    background-color: var(--color-red);
    border: none;

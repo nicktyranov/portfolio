@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import Label from '../Label/Label';
 import cn from 'classnames';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css/pagination';
+import 'swiper/css';
+import 'swiper/css/bundle';
+import './swiper.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './Filter.module.css';
 import { Link } from 'react-router-dom';
 import { Data, data } from './filterData';
@@ -53,7 +59,6 @@ function Filter({ ...props }) {
             : [...prev, id];
       });
    };
-   console.log(clickedLabels);
 
    useEffect(() => {
       if (clickedLabels.length === 0) {
@@ -69,6 +74,13 @@ function Filter({ ...props }) {
          setClickedLabels([]);
       }
    }, [clickedLabels]);
+
+   const pagination = {
+      clickable: true,
+      renderBullet: function (index: number, className: string) {
+         return `<span class=${className} key=${index}></span>`;
+      }
+   };
 
    return (
       <div className={styles.wrapper} {...props}>
@@ -106,6 +118,38 @@ function Filter({ ...props }) {
                   </div>
                );
             })}
+         </div>
+
+         <div className={styles['cards-wrapper-mobile']}>
+            <Swiper
+               spaceBetween={20}
+               slidesPerView={1}
+               loopAddBlankSlides={true}
+               allowTouchMove={true}
+               modules={[Pagination]}
+               pagination={pagination}
+            >
+               {filteredData.map((item) => {
+                  return (
+                     <SwiperSlide key={item.id}>
+                        <div className={styles['card']} key={item.id}>
+                           <Link to={`/projects/${item.id}`}>
+                              <img
+                                 src={item.img}
+                                 alt={item.name}
+                                 className={styles['card-image']}
+                              />
+                              <Label
+                                 text={item.name}
+                                 forFilter={true}
+                                 className={styles['card-label']}
+                              />
+                           </Link>
+                        </div>
+                     </SwiperSlide>
+                  );
+               })}
+            </Swiper>
          </div>
       </div>
    );

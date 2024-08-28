@@ -4,9 +4,8 @@ import styles from './Contacts.module.css';
 function Contacts() {
    return (
       <div className={styles.wrapper}>
-         test
-         <div>
-            <img src={image} alt="image" />
+         <div className={styles.image}>
+            <img src={image} alt="image" className={styles.image} />
          </div>
          <div className={styles.contacts}>
             <div className={styles.contact}>

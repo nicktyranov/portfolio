@@ -1,4 +1,3 @@
-import styles from './app.module.css';
 import Contacts from './components/Contacts/Contacts';
 import Filter from './components/Filter/Filter';
 import Footer from './components/Footer/Footer';
@@ -9,6 +8,7 @@ import Menu from './components/Menu/Menu';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectInfo from './projects/projectInfo';
 import { useEffect } from 'react';
+import styles from './app.module.css';
 
 function App() {
    const location = useLocation();
@@ -18,7 +18,9 @@ function App() {
          const element = document.getElementById(location.hash.substring(1));
 
          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const y = element.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({ top: y, behavior: 'smooth' });
          } else {
             window.scrollTo(0, 0);
          }
@@ -44,7 +46,7 @@ function App() {
                         <div className={styles['stack-wrapper']}>
                            <div className={styles['stack-left']}>
                               <p>
-                                 Front-end: TypeScript, JavaScript, React,
+                                 FRONT-END: TypeScript, JavaScript, React,
                                  Next.js, Redux, HTML5, CSS3
                               </p>
                            </div>

@@ -61,7 +61,7 @@ export default function Form({
 
    function checkEmail(email: string) {
       const regex =
-         /^((([0-9A-Za-z]{1}[-0-9A-z]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
+         /^[0-9A-Za-z][-0-9A-Za-z.]*[0-9A-Za-z]@([-A-Za-z]+\.){1,2}[-A-Za-z]{2,}$/;
       return regex.test(email);
    }
 
@@ -133,7 +133,7 @@ export default function Form({
                }
             );
       } else {
-         setValidForm(false); // Если форма не валидна, устанавливаем это состояние
+         setValidForm(false);
       }
    };
 

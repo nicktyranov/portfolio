@@ -55,7 +55,7 @@ export const data: Data[] = [
       name: 'Shoppe',
       links: [
          'https://film-api-alpha.vercel.app',
-         'https://github.com/nicktyranov/React'
+         'https://github.com/nicktyranov/NEXT_Pro'
       ],
       categoryId: [0, 1, 2, 3, 5, 6],
       img: cardImg2,
@@ -132,12 +132,6 @@ export const data: Data[] = [
          'Cross-browser testing to ensure consistent user experience across different platforms',
          'Optimized performance for faster load times and smooth interactions'
       ],
-      technologies: [
-         'HTML5',
-         'CSS3',
-         'JavaScript',
-         'Responsive Design',
-         'Cross-browser compatibility'
-      ]
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
    }
 ];
