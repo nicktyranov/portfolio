@@ -1,0 +1,165 @@
+.wrapper {
+   position: relative;
+
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 1144px;
+   margin: 0 auto;
+   padding: 160px 0;
+}
+
+.container {
+   position: relative;
+}
+
+.text {
+   position: relative;
+
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
+   align-items: center;
+
+   font-family: Humane, sans-serif;
+   font-size: 297px;
+   font-weight: 700;
+   font-style: normal;
+   line-height: 71%;
+   color: var(--color-white);
+   text-align: center;
+   text-transform: uppercase;
+   text-wrap: nowrap;
+}
+
+.text span {
+   display: inline-block;
+
+   font-size: var(--font-168);
+   font-weight: 600;
+   font-style: normal;
+   line-height: 74%;
+   color: var(--color-red);
+   text-transform: uppercase;
+}
+
+.label1 {
+   position: absolute;
+   top: 30px;
+   left: -38px;
+}
+
+.label2 {
+   position: absolute;
+   top: 0;
+   left: 178px;
+}
+
+.label3 {
+   position: absolute;
+   top: 120px;
+   left: 140px;
+}
+
+.label4 {
+   position: absolute;
+   top: 45px;
+   left: 515px;
+}
+
+.label5 {
+   position: absolute;
+   top: 110px;
+   left: 745px;
+}
+
+.label6 {
+   position: absolute;
+   top: 0;
+   right: 50px;
+}
+
+.label7 {
+   position: absolute;
+   top: 140px;
+   right: -40px;
+}
+
+.label8 {
+   position: absolute;
+   bottom: 25px;
+   left: 235px;
+}
+
+.label9 {
+   position: absolute;
+   right: 265px;
+   bottom: 85px;
+}
+
+.labels-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   align-items: center;
+   justify-content: center;
+
+   margin-top: 20px;
+
+   text-wrap: nowrap;
+}
+
+@media (width <= 1200px) {
+   .label {
+      position: static;
+   }
+
+   .text {
+      font-size: var(--font-276);
+      font-weight: 700;
+      font-style: normal;
+      line-height: 71%;
+   }
+}
+
+@media (width <= 1100px) {
+   .text {
+      font-size: var(--font-200);
+   }
+
+   .text span {
+      font-size: var(--font-168);
+   }
+}
+
+@media (width <= 768px) {
+   .text {
+      font-size: var(--font-100);
+   }
+
+   .text span {
+      font-size: var(--font-80);
+   }
+
+   .label {
+      font-size: var(--font-12);
+   }
+}
+
+@media (width <= 400px) {
+   .wrapper {
+      margin: 200px 0;
+      padding: 0;
+   }
+
+   .text {
+      font-size: var(--font-88);
+   }
+
+   .text span {
+      font-size: var(--font-60);
+   }
+
+   .label {
+      font-size: var(--font-12);
+   }
+}

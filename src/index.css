@@ -1,3 +1,89 @@
 :root {
+   /* colors */
+   --color-white: #fff;
+   --color-extra-black: #000;
+   --color-black: #131313;
+   --color-grey: #616060;
+   --color-grey-light: #9b9999;
+   --color-grey-very-light: #d9d9d9;
+   --color-red: #db293a;
+   --color-black-transparent: rgb(19 19 19 / 70.6%);
+   --color-black-transparent2: rgb(19 19 19 / 35%);
+   --color-red-50: rgb(162 35 35 / 50%);
+   --color-red-hover: rgb(72 3 9 / 83%);
+
+   /* fonts */
+   --font-12: 12px;
+   --font-15: 15px;
+   --font-16: 16px;
+   --font-20: 20px;
+   --font-23: 23px;
+   --font-26: 26px;
+   --font-27: 27px;
+   --font-30: 30px;
+   --font-39: 39px;
+   --font-50: 50px;
+   --font-55: 55px;
+   --font-60: 60px;
+   --font-80: 80px;
+   --font-88: 88px;
+   --font-100: 100px;
+   --font-168: 168px;
+   --font-200: 200px;
+   --font-240: 240px;
+   --font-276: 276px;
+   --font-289: 289px;
+   --font-297: 297px;
+   --font-335: 335px;
+
    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* sans-serif */
+@font-face {
+   font-family: Humane;
+   font-weight: 600;
+   font-style: normal;
+   src: url('./fonts/Humane-SemiBold.otf') format('truetype');
+}
+
+@font-face {
+   font-family: Humane;
+   font-weight: 700;
+   font-style: normal;
+   src: url('./fonts/Humane-Bold.otf') format('truetype');
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+body {
+   max-width: 1280px;
+   margin: 0 auto;
+
+   /* padding: 30px 40px; */
+   padding: 10px;
+
+   font-family: Urbanist, sans-serif;
+
+   background-color: var(--color-black);
+}
+
+canvas#background-canvas {
+   position: fixed;
+   z-index: -1;
+   top: 0;
+   left: 0;
+
+   width: 100%;
+   height: 100%;
 }

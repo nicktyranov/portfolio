@@ -1,0 +1,114 @@
+.heading {
+   margin-top: 130px;
+   margin-bottom: 30px;
+
+   font-family: Humane, sans-serif;
+   font-size: 100px;
+   font-weight: 600;
+   font-style: normal;
+   line-height: 100%; /* 100px */
+   color: var(--color-white);
+   text-transform: uppercase;
+}
+
+.text-about {
+   margin-bottom: 20px;
+
+   font-size: var(--font-30);
+   font-weight: 400;
+   font-style: normal;
+   line-height: 120%;
+   color: var(--color-grey-light);
+   text-align: justify;
+   text-transform: uppercase;
+}
+
+.stack-wrapper {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
+
+   font-size: var(--font-20);
+   font-weight: 400;
+   font-style: normal;
+   line-height: 116%;
+   color: var(--color-white);
+}
+
+.stack-wrapper div {
+   width: 100%;
+   padding: 47px 130px;
+}
+
+.stack-left {
+   background-color: var(--color-red);
+}
+
+.stack-right {
+   background-color: var(--color-extra-black);
+}
+
+@media (width <= 998px) {
+   .stack-wrapper div {
+      width: 100%;
+      padding: 47px 80px;
+      text-align: center;
+   }
+}
+
+@media (width <= 768px) {
+   .stack-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      font-size: var(--font-20);
+      font-weight: 400;
+      font-style: normal;
+      line-height: 116%;
+      color: var(--color-white);
+   }
+
+   .stack-wrapper div {
+      width: 100%;
+      padding: 30px 20px;
+      text-align: center;
+   }
+
+   .heading {
+      margin-top: 70px;
+      margin-bottom: 15px;
+
+      font-size: 100px;
+      font-weight: 600;
+      font-style: normal;
+      line-height: 100%;
+   }
+
+   .heading:nth-child(1) {
+      margin-top: 130px;
+   }
+
+   .text-about {
+      margin-bottom: 15px;
+      font-size: 20px;
+      font-weight: 500;
+      font-style: normal;
+   }
+}
+
+@media (width <= 400px) {
+   .heading {
+      margin-top: 70px;
+      margin-bottom: 15px;
+
+      font-size: 50px;
+      font-weight: 600;
+      font-style: normal;
+      line-height: 100%;
+   }
+
+   .heading:nth-child(1) {
+      margin-top: 130px;
+   }
+}

@@ -1,0 +1,63 @@
+.button {
+   cursor: pointer;
+
+   display: flex;
+   justify-content: center;
+
+   width: 100%;
+   max-width: 445px;
+   padding: 20px 0;
+
+   font-size: var(--font-16);
+   font-weight: 400;
+   font-style: normal;
+   line-height: 21px;
+   color: var(--color-white);
+   text-align: center;
+   text-transform: uppercase;
+   text-wrap: nowrap;
+
+   background: none;
+   border: 1px solid var(--color-white);
+}
+
+.button-text {
+   display: flex;
+   place-content: center center;
+}
+
+.form {
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   justify-content: center;
+
+   width: 100%;
+   max-width: 600px;
+   max-height: 50px;
+
+   background-color: var(--color-red);
+   border: none;
+}
+
+.form img,
+.button img {
+   width: 100%;
+   max-width: 11px;
+   max-height: 11px;
+}
+
+.icon-wrapper {
+   display: flex;
+   gap: 3px;
+   align-items: center;
+   justify-content: center;
+
+   height: 19px;
+}
+
+.icon-wrapper img {
+   width: 100%;
+   max-width: 11px;
+   max-height: 11px;
+}
