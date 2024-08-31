@@ -54,7 +54,7 @@ export const data: Data[] = [
       id: 2,
       name: 'Shoppe',
       links: [
-         'https://film-api-alpha.vercel.app',
+         'https://shoppe-gamma.vercel.app',
          'https://github.com/nicktyranov/NEXT_Pro'
       ],
       categoryId: [0, 1, 2, 3, 5, 6],
