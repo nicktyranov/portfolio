@@ -1,6 +1,5 @@
 /* eslint-disable indent */
 (function () {
-   // var canvas = document.createElement('canvas'),
    var canvas = document.getElementById('background-canvas'),
       ctx = canvas.getContext('2d'),
       w = (canvas.width = innerWidth),
@@ -10,7 +9,7 @@
          bgColor: 'rgba(17, 17, 19, 1)',
          particleColor: 'rgba(255, 40, 40, 1)',
          particleRadius: 3,
-         particleCount: 60,
+         particleCount: 40,
          particleMaxVelocity: 0.5,
          lineLength: 150,
          particleLife: 6
