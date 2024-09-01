@@ -41,6 +41,14 @@ export default function Form({
       }
    }, [email]);
 
+   useEffect(() => {
+      if (successSubmit) {
+         setTimeout(() => {
+            setSuccessSubmit(false);
+         }, 5000);
+      }
+   }, [successSubmit]);
+
    const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.value.length === 0) {
          setErrorName('');
@@ -147,74 +155,86 @@ export default function Form({
                </React.Fragment>
             ))}
          </div>
-         <form
-            ref={form}
-            className={cn(styles.form, {
-               [styles['form-page']]: productPage
-            })}
-            onSubmit={handleFormSubmit}
-         >
-            <label htmlFor="name">
-               {errorName && (
+         {!successSubmit && (
+            <form
+               ref={form}
+               className={cn(styles.form, {
+                  [styles['form-page']]: productPage
+               })}
+               onSubmit={handleFormSubmit}
+            >
+               <label htmlFor="name">
+                  {errorName && (
+                     <div className={cn(styles.error, styles.message)}>
+                        {errorName}
+                     </div>
+                  )}
+                  <input
+                     type="text"
+                     name="name"
+                     id="name"
+                     placeholder="Name"
+                     onChange={handleNameChange}
+                     value={name}
+                  />
+               </label>
+
+               <label htmlFor="email">
+                  {errorEmail && (
+                     <div className={cn(styles.error, styles.message)}>
+                        {errorEmail}
+                     </div>
+                  )}
+                  <input
+                     type="text"
+                     name="email"
+                     id="email"
+                     placeholder="Email"
+                     onChange={handleEmailChange}
+                     value={email}
+                  />
+               </label>
+
+               <label htmlFor="text">
+                  {errorText && (
+                     <div className={cn(styles.error, styles.message)}>
+                        {errorText}
+                     </div>
+                  )}
+                  <textarea
+                     name="text"
+                     id="text"
+                     placeholder="Text"
+                     onChange={handleTextChange}
+                     value={text}
+                  ></textarea>
+               </label>
+               {!validForm && (
                   <div className={cn(styles.error, styles.message)}>
-                     {errorName}
+                     There is a mistake in this form. Check your input
+                     information
                   </div>
                )}
-               <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Name"
-                  onChange={handleNameChange}
-                  value={name}
-               />
-            </label>
+               <Button icon={true} isForm={true} type="submit">
+                  send
+               </Button>
 
-            <label htmlFor="email">
-               {errorEmail && (
-                  <div className={cn(styles.error, styles.message)}>
-                     {errorEmail}
+               {successSubmit && (
+                  <div className={cn(styles.success, styles.message)}>
+                     Your request has been received.
                   </div>
                )}
-               <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  onChange={handleEmailChange}
-                  value={email}
-               />
-            </label>
-
-            <label htmlFor="text">
-               {errorText && (
-                  <div className={cn(styles.error, styles.message)}>
-                     {errorText}
-                  </div>
-               )}
-               <textarea
-                  name="text"
-                  id="text"
-                  placeholder="Text"
-                  onChange={handleTextChange}
-                  value={text}
-               ></textarea>
-            </label>
-            {!validForm && (
-               <div className={cn(styles.error, styles.message)}>
-                  There is a mistake in this form. Check your input information
-               </div>
-            )}
-            <Button icon={true} isForm={true} type="submit">
-               send
-            </Button>
-
-            {successSubmit && (
-               <div className={cn(styles.success, styles.message)}>
-                  Your request has been received.
-               </div>
-            )}
-         </form>
+            </form>
+         )}
+         {successSubmit && (
+            <div className={styles['thanks']}>
+               <h3>thank you</h3>
+               <p>
+                  Your message has been sent successfully. I will be in touch
+                  with you shortly.
+               </p>
+            </div>
+         )}
       </div>
    );
 }

@@ -18,6 +18,14 @@
    gap: 10px;
 }
 
+.icon {
+   color: white;
+}
+
+.icon:hover {
+   color: var(--color-grey-light);
+}
+
 .text {
    display: flex;
    align-items: center;

@@ -15,6 +15,10 @@ export default function ProjectInfo() {
       window.scrollTo(0, 0);
    }, []);
 
+   useEffect(() => {
+      document.title = `Nikolai Tyranov | ${product?.name}`;
+   }, [product?.name]);
+
    if (!product) {
       return <div>Product not found</div>;
    }

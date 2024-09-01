@@ -38,15 +38,37 @@ textarea {
    font-size: var(--font-16);
    font-weight: 500;
    font-style: normal;
-   color: var(--color-grey-light);
+   color: var(--color-white);
 
    background-color: var(--color-extra-black);
    border: none;
 }
 
+.form input,
+textarea:active {
+   color: var(--color-white);
+}
+
 .message {
    padding: 5px;
    font-size: var(--font-14);
+   text-align: center;
+}
+
+.thanks h3 {
+   font-size: 55px;
+   font-weight: 500;
+   line-height: 116%;
+   color: var(--color-red);
+   text-align: center;
+   text-transform: capitalize;
+}
+
+.thanks p {
+   font-size: 20px;
+   font-weight: 400;
+   line-height: 116%;
+   color: var(--color-white);
    text-align: center;
 }
 
