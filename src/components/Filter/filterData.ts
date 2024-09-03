@@ -25,8 +25,8 @@ export const data: Data[] = [
       id: 1,
       name: 'website Pai',
       links: [
-         'https://film-api-alpha.vercel.app',
-         'https://github.com/nicktyranov/React'
+         'website-pai.vercel.app',
+         'https://github.com/nicktyranov/website_pai'
       ],
       categoryId: [0, 1, 2],
       img: cardImg1,
@@ -116,8 +116,8 @@ export const data: Data[] = [
       id: 4,
       name: 'website Finio',
       links: [
-         'https://website-finio.vercel.app',
-         'https://github.com/nicktyranov/HTML-CSS-COURSE-2/tree/master/3-Finio'
+         'https://website-finio-j9ob.vercel.app',
+         'https://github.com/nicktyranov/website_finio'
       ],
       categoryId: [0, 1, 2],
       img: cardImg4,
