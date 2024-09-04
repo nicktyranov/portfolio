@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { data } from '../components/Filter/filterData';
 import img from './projects-icon.svg';
 import Button from '../components/Button/Button';
@@ -37,13 +37,21 @@ export default function ProjectInfo() {
                {product.shortDescription}
             </p>
             <div className={styles['header-buttons']}>
-               <Link to={product.links[0]}>
+               <a
+                  href={product.links[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+               >
                   <Button>VIEW PROJECT</Button>
-               </Link>
+               </a>
 
-               <Link to={product.links[1]}>
+               <a
+                  href={product.links[1]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+               >
                   <Button>VIEW ON GITHUB</Button>
-               </Link>
+               </a>
             </div>
          </div>
          <div className={styles.poster}>

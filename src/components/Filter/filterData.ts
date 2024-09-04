@@ -25,7 +25,7 @@ export const data: Data[] = [
       id: 1,
       name: 'website Pai',
       links: [
-         'website-pai.vercel.app',
+         'https://website-pai.vercel.app',
          'https://github.com/nicktyranov/website_pai'
       ],
       categoryId: [0, 1, 2],
