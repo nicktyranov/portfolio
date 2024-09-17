@@ -9,6 +9,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectInfo from './projects/projectInfo';
 import { useEffect } from 'react';
 import styles from './app.module.css';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
    const location = useLocation();
@@ -69,6 +70,7 @@ function App() {
                }
             />
             <Route path="/projects/:id" element={<ProjectInfo />} />
+            <Route path="*" element={<NotFound />} />
          </Routes>
          <Footer />
       </>

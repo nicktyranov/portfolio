@@ -2,8 +2,6 @@
 (function () {
    var canvas = document.getElementById('background-canvas'),
       ctx = canvas.getContext('2d'),
-      w = (canvas.width = innerWidth),
-      h = (canvas.height = innerHeight),
       particles = [],
       properties = {
          bgColor: 'rgba(17, 17, 19, 1)',
@@ -11,20 +9,32 @@
          particleRadius: 3,
          particleCount: 40,
          particleMaxVelocity: 0.5,
-         lineLength: 150,
+         lineLength: 120,
          particleLife: 6
       };
+
+   // Устанавливаем размеры холста с учетом devicePixelRatio
+   function setCanvasSize() {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = innerWidth * dpr;
+      canvas.height = innerHeight * dpr;
+      canvas.style.width = `${innerWidth}px`;
+      canvas.style.height = `${innerHeight}px`;
+      ctx.scale(dpr, dpr);
+   }
+
+   setCanvasSize();
 
    document.querySelector('body').appendChild(canvas);
 
    window.onresize = function () {
-      (w = canvas.width = innerWidth), (h = canvas.height = innerHeight);
+      setCanvasSize();
    };
 
    class Particle {
       constructor() {
-         this.x = Math.random() * w;
-         this.y = Math.random() * h;
+         this.x = Math.random() * innerWidth;
+         this.y = Math.random() * innerHeight;
          this.velocityX =
             Math.random() * (properties.particleMaxVelocity * 2) -
             properties.particleMaxVelocity;
@@ -32,15 +42,14 @@
             Math.random() * (properties.particleMaxVelocity * 2) -
             properties.particleMaxVelocity;
 
-         //60 кадров/с
          this.life = Math.random() * properties.particleLife * 60;
       }
       position() {
-         (this.x + this.velocityX > w && this.velocityX > 0) ||
+         (this.x + this.velocityX > innerWidth && this.velocityX > 0) ||
          (this.x + this.velocityX < 0 && this.velocityX < 0)
             ? (this.velocityX *= -1)
             : this.velocityX;
-         (this.y + this.velocityY > h && this.velocityY > 0) ||
+         (this.y + this.velocityY > innerHeight && this.velocityY > 0) ||
          (this.y + this.velocityY < 0 && this.velocityY < 0)
             ? (this.velocityY *= -1)
             : this.velocityY;
@@ -56,8 +65,8 @@
       }
       reCalculateLife() {
          if (this.life < 1) {
-            this.x = Math.random() * w;
-            this.y = Math.random() * h;
+            this.x = Math.random() * innerWidth;
+            this.y = Math.random() * innerHeight;
             this.velocityX =
                Math.random() * (properties.particleMaxVelocity * 2) -
                properties.particleMaxVelocity;
@@ -72,7 +81,7 @@
 
    function reDrawBackground() {
       ctx.fillStyle = properties.bgColor;
-      ctx.fillRect(0, 0, w, h);
+      ctx.fillRect(0, 0, innerWidth, innerHeight);
    }
 
    function drawLines() {
@@ -86,7 +95,7 @@
             length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
             if (length < properties.lineLength) {
                opacity = 1 - length / properties.lineLength;
-               ctx.lineWidth = '0.5';
+               ctx.lineWidth = 0.2;
                ctx.strokeStyle = 'rgba(255, 40, 40, ' + opacity + ')';
                ctx.beginPath();
                ctx.moveTo(x1, y1);
