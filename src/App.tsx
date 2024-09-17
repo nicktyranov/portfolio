@@ -9,7 +9,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectInfo from './projects/projectInfo';
 import { useEffect } from 'react';
 import styles from './app.module.css';
-import QRCodeLink from './components/NotFound/NotFound';
 import NotFound from './components/NotFound/NotFound';
 
 function App() {
