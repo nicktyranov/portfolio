@@ -16,7 +16,7 @@ export default function NotFound() {
       <div className={styles.wrapper}>
          <h1 className={styles.heading}>404 Not Found</h1>
          <Link to={'/'}>
-            <Button>Main Page</Button>
+            <Button className={styles.button}>Main Page</Button>
          </Link>
       </div>
    );
